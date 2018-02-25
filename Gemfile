@@ -9,7 +9,6 @@ gem "rails", "5.1.5"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.7"
 gem "webpacker"
-gem "jbuilder", "~> 2.5"
 
 group :production do
   gem "redis", "~> 4.0"
