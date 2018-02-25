@@ -11,6 +11,10 @@ gem "puma", "~> 3.7"
 gem "webpacker"
 gem "jbuilder", "~> 2.5"
 
+group :production do
+  gem "redis", "~> 4.0"
+end
+
 group :development, :test do
   gem "byebug"
 end
