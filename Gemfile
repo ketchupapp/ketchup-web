@@ -15,7 +15,7 @@ group :production do
 end
 
 group :development, :test do
-  gem "byebug"
+  gem "pry-byebug"
 end
 
 group :development do
