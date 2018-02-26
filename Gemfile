@@ -14,6 +14,7 @@ gem "jbuilder", "~> 2.7"
 
 group :production do
   gem "redis", "~> 4.0"
+  gem "lograge", "~> 0.9.0"
 end
 
 group :development, :test do
