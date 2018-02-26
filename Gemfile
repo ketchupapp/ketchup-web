@@ -10,6 +10,7 @@ gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.7"
 gem "webpacker", "~> 3.2"
 gem "devise", "~> 4.4"
+gem "jbuilder", "~> 2.7"
 
 group :production do
   gem "redis", "~> 4.0"
