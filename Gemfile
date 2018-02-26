@@ -11,6 +11,7 @@ gem "puma", "~> 3.7"
 gem "webpacker", "~> 3.2"
 gem "devise", "~> 4.4"
 gem "jbuilder", "~> 2.7"
+gem "tiddle", github: "adamniedzielski/tiddle"
 
 group :production do
   gem "redis", "~> 4.0"
