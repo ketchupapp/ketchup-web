@@ -21,12 +21,26 @@ class FriendsController < ApplicationController
 
   # POST /friends
   def create
-    @friend = Friend.new(friend_params.merge(user: current_user))
+    respond_to do |format|
+      format.json do
+        @friends = bulk_friend_params.map do |friend_params|
+          Friend.new(friend_params.merge(user: current_user))
+        end.each(&:save)
 
-    if @friend.save
-      redirect_to @friend, notice: 'Friend was successfully created.'
-    else
-      render :new
+        friends, errors = @friends.partition{|f| f.errors.empty? }
+        errors.map!{|e| e.as_json.merge(errors: e.errors) }
+        render json: {friends: friends, errors: errors}
+      end
+
+      format.html do
+        @friend = Friend.new(friend_params.merge(user: current_user))
+
+        if @friend.save
+          redirect_to @friend, notice: 'Friend was successfully created.'
+        else
+          render :new
+        end
+      end
     end
   end
 
@@ -49,6 +63,12 @@ class FriendsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_friend
       @friend = current_user.friends.find(params[:id])
+    end
+
+    def bulk_friend_params
+      params.require(:friends).map do |object|
+        object.permit(:name, :nickname, :avatar_url)
+      end
     end
 
     # Only allow a trusted parameter "white list" through.
