@@ -30,7 +30,7 @@ class CatchupsController < ApplicationController
     respond_to do |format|
       if @catchup.save
         format.html { redirect_to @catchup, notice: 'Catchup was successfully created.' }
-        format.json { render :show, status: :created, location: @catchup }
+        format.json { render :show, status: :created, location: [@friend, @catchup] }
       else
         format.html { render :new }
         format.json { render json: @catchup.errors, status: :unprocessable_entity }
@@ -44,7 +44,7 @@ class CatchupsController < ApplicationController
     respond_to do |format|
       if @catchup.update(catchup_params)
         format.html { redirect_to @catchup, notice: 'Catchup was successfully updated.' }
-        format.json { render :show, status: :ok, location: @catchup }
+        format.json { render :show, status: :ok, location: [@friend, @catchup] }
       else
         format.html { render :edit }
         format.json { render json: @catchup.errors, status: :unprocessable_entity }
