@@ -79,5 +79,35 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'ketchupapp.co' }
+  config.host = ENV.fetch("HOST", "ketchupapp.co")
+  config.action_mailer.default_url_options = { host: config.host }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+
+  case config.host
+  when "ketchupapp.co"
+    config.action_mailer.smtp_settings = {
+      :user_name => ENV["SENDGRID_USERNAME"],
+      :password => ENV["SENDGRID_PASSWORD"],
+      :domain => config.host,
+      :address => "smtp.sendgrid.net",
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+    }
+  when "ketchupapp-staging.herokuapp.com"
+    require "rest_client"
+    require "json"
+    mailtrap_token = ENV.fetch("MAILTRAP_API_TOKEN")
+    response = RestClient::Resource.new("https://mailtrap.io/api/v1/inboxes.json?api_token=#{mailtrap_token}").get
+    first_inbox = JSON.parse(response)[0]
+    config.action_mailer.smtp_settings = {
+      :user_name => first_inbox["username"],
+      :password => first_inbox["password"],
+      :address => first_inbox["domain"],
+      :domain => first_inbox["domain"],
+      :port => first_inbox["smtp_ports"][0],
+      :authentication => :plain
+    }
+  end
 end
