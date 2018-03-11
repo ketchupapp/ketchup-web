@@ -1,0 +1,2 @@
+#!/bin/sh
+HEROKU_APP=ketchupapp-staging exec heroku "$@"
