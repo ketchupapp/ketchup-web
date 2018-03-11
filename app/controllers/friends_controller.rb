@@ -3,7 +3,7 @@ class FriendsController < ApplicationController
 
   # GET /friends
   def index
-    @friends = Friend.all
+    @friends = current_user.friends
   end
 
   # GET /friends/1
@@ -12,7 +12,7 @@ class FriendsController < ApplicationController
 
   # GET /friends/new
   def new
-    @friend = Friend.new
+    @friend = current_user.friends.new
   end
 
   # GET /friends/1/edit
@@ -21,7 +21,7 @@ class FriendsController < ApplicationController
 
   # POST /friends
   def create
-    @friend = Friend.new(friend_params)
+    @friend = Friend.new(friend_params.merge(user: current_user))
 
     if @friend.save
       redirect_to @friend, notice: 'Friend was successfully created.'
@@ -48,11 +48,11 @@ class FriendsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_friend
-      @friend = Friend.find(params[:id])
+      @friend = current_user.friends.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def friend_params
-      params.require(:friend).permit(:name, :nickname, :last_ketchup_at, :avatar_url, :user_id)
+      params.require(:friend).permit(:name, :nickname, :avatar_url)
     end
 end
