@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #FFF;
   color: #333;
   margin: 33px;
 }
@@ -42,7 +42,7 @@ div.actions {
   margin-bottom: 10px;
 }
 
-#notice {
+.notice {
   color: green;
 }
 

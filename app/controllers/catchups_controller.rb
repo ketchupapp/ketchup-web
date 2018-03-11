@@ -11,6 +11,10 @@ class CatchupsController < ApplicationController
   # GET /catchups/1
   # GET /catchups/1.json
   def show
+    respond_to do |format|
+      format.html { redirect_to @friend }
+      format.json
+    end
   end
 
   # GET /catchups/new
@@ -29,7 +33,7 @@ class CatchupsController < ApplicationController
 
     respond_to do |format|
       if @catchup.save
-        format.html { redirect_to @catchup, notice: 'Catchup was successfully created.' }
+        format.html { redirect_to [@friend, @catchup], notice: 'Catchup was successfully created.' }
         format.json { render :show, status: :created, location: [@friend, @catchup] }
       else
         format.html { render :new }
@@ -43,7 +47,7 @@ class CatchupsController < ApplicationController
   def update
     respond_to do |format|
       if @catchup.update(catchup_params)
-        format.html { redirect_to @catchup, notice: 'Catchup was successfully updated.' }
+        format.html { redirect_to [@friend, @catchup], notice: 'Catchup was successfully updated.' }
         format.json { render :show, status: :ok, location: [@friend, @catchup] }
       else
         format.html { render :edit }
@@ -57,7 +61,7 @@ class CatchupsController < ApplicationController
   def destroy
     @catchup.destroy
     respond_to do |format|
-      format.html { redirect_to catchups_url, notice: 'Catchup was successfully destroyed.' }
+      format.html { redirect_to friend_catchups_url(@friend), notice: 'Catchup was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -74,6 +78,6 @@ class CatchupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def catchup_params
-      params.require(:catchup).permit(:happened_at)
+      {happened_at: params.fetch(:happened_at, Time.now)}
     end
 end
