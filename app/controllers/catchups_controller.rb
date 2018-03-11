@@ -1,10 +1,11 @@
 class CatchupsController < ApplicationController
+  before_action :set_friend
   before_action :set_catchup, only: [:show, :edit, :update, :destroy]
 
   # GET /catchups
   # GET /catchups.json
   def index
-    @catchups = Catchup.all
+    @catchups = @friend.catchups
   end
 
   # GET /catchups/1
@@ -14,7 +15,7 @@ class CatchupsController < ApplicationController
 
   # GET /catchups/new
   def new
-    @catchup = Catchup.new
+    @catchup = @friend.catchups.new
   end
 
   # GET /catchups/1/edit
@@ -24,7 +25,7 @@ class CatchupsController < ApplicationController
   # POST /catchups
   # POST /catchups.json
   def create
-    @catchup = Catchup.new(catchup_params)
+    @catchup = @friend.catchups.new(catchup_params)
 
     respond_to do |format|
       if @catchup.save
@@ -64,11 +65,15 @@ class CatchupsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_catchup
-      @catchup = current_user.catchups.where(friend_id: params[:friend_id]).find(params[:id])
+      @catchup ||= @friend.catchups.find(params[:id])
+    end
+
+    def set_friend
+      @friend ||= current_user.friends.find(params[:friend_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def catchup_params
-      params.require(:catchup).permit(:belongs_to)
+      params.require(:catchup).permit(:happened_at)
     end
 end
