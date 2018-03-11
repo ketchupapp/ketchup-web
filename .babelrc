@@ -17,6 +17,13 @@
     "syntax-dynamic-import",
     "transform-object-rest-spread",
     [
+      "module-resolver",
+      {
+        "root": ["./app/javascript"],
+	"alias": {}
+      }
+    ],
+    [
       "transform-class-properties",
       {
         "spec": true
