@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
 
-  resources :friends
+  resources :friends do
+    resources :catchups
+  end
+
   root to: "home#index"
 end
