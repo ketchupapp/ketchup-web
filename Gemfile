@@ -14,8 +14,9 @@ gem "jbuilder", "~> 2.7"
 gem "tiddle", github: "adamniedzielski/tiddle"
 
 group :production do
-  gem "redis", "~> 4.0"
   gem "lograge", "~> 0.9.0"
+  gem "redis", "~> 4.0"
+  gem "sendgrid-ruby", "~> 5.2"
 end
 
 group :development, :test do
@@ -27,3 +28,4 @@ group :development do
   gem "web-console", "~> 3.3"
   gem "listen", ">= 3.0.5", "< 3.2"
 end
+
