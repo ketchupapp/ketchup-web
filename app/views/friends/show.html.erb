@@ -11,18 +11,13 @@
 </p>
 
 <p>
-  <strong>Last ketchup at:</strong>
-  <%= @friend.last_ketchup_at %>
+  <strong>Last seen at</strong>
+  <%= @friend.last_seen_at %>
 </p>
 
 <p>
   <strong>Avatar url:</strong>
-  <%= @friend.avatar_url %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @friend.user %>
+  <%= image_tag @friend.avatar_url if @friend.avatar_url %>
 </p>
 
 <%= link_to 'Edit', edit_friend_path(@friend) %> |
