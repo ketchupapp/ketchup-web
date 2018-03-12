@@ -39,7 +39,7 @@ class FriendsController < ApplicationController
         @friend = Friend.new(friend_params.merge(user: current_user))
 
         if @friend.save
-          redirect_to @friend, notice: 'Friend was successfully created.'
+          redirect_to friends_path, notice: 'Friend was successfully created.'
         else
           render :new
         end
@@ -52,7 +52,7 @@ class FriendsController < ApplicationController
   def update
     respond_to do |format|
       if @friend.update(friend_params)
-        format.html { redirect_to @friend, notice: 'Friend was successfully updated.' }
+        format.html { redirect_to friends_path, notice: 'Friend was successfully updated.' }
         format.json { render :show, status: :ok, location: @friend }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class FriendsController < ApplicationController
   def destroy
     @friend.destroy
     respond_to do |format|
-      format.html { redirect_to friends_url, notice: 'Friend was successfully destroyed.' }
+      format.html { redirect_to friends_path, notice: 'Friend was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
