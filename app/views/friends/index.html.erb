@@ -1,27 +1,11 @@
-<h1>Friends</h1>
-
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Nickname</th>
-      <th>Last seen at</th>
-      <th>Avatar</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @friends.each do |friend| %>
       <tr>
-        <td><%= friend.name %></td>
-        <td><%= friend.nickname %></td>
-        <td><%= friend.last_seen_at %></td>
         <td><%= image_tag friend.avatar_url if friend.avatar_url %></td>
-        <td><%= link_to "Caught up!", friend_catchups_path(friend, catchup: {}), method: :create %></td>
-        <td><%= link_to 'Show', friend %></td>
-        <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
-        <td><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to(friend.nickname || friend.name, edit_friend_path(friend)) %></td>
+        <td><%= time_ago(friend.last_seen_at) %></td>
+        <td><%= link_to "Mark caught up!", friend_catchups_path(friend, catchup: {}), method: :create %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +13,4 @@
 
 <br>
 
-<%= link_to 'New Friend', new_friend_path %>
+<%= link_to 'Add friend', new_friend_path %>

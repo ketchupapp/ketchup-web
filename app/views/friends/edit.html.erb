@@ -1,6 +1,6 @@
-<h1>Editing Friend</h1>
+<h2>Editing Friend</h2>
 
 <%= render 'form', friend: @friend %>
 
-<%= link_to 'Show', @friend %> |
+<%= link_to 'Remove', @friend, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', friends_path %>
