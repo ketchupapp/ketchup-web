@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :catchups
   end
 
+  get '/about' => 'home#about'
   root to: "home#index"
 end
