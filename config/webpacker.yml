@@ -23,6 +23,7 @@ default: &default
     - .gif
     - .jpeg
     - .jpg
+    - .ttf
 
 development:
   <<: *default
