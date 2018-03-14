@@ -2,14 +2,14 @@
   font-family: 'Fredoka One';
   font-style: normal;
   font-weight: 800;
-  src: local('Fredoka One'), local('FredokaOne-Regular'), url('/fonts/fredokaone.ttf') format('truetype');
+  src: local('Fredoka One'), local('FredokaOne-Regular'), url('~fonts/fredokaone.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Nunito Sans Regular'), local('NunitoSans-Regular'), url('/fonts/nunitosans-regular.ttf') format('truetype');
+  src: local('Nunito Sans Regular'), local('NunitoSans-Regular'), url('~fonts/nunitosans-regular.ttf') format('truetype');
 }
 
 body {
