@@ -1,2 +1,3 @@
-json.(resource, :id, :email)
-json.auth_token @auth_token
+json.value do
+  json.partial! 'users/user', user: resource
+end

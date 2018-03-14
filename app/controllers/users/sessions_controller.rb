@@ -7,6 +7,7 @@ class Users::SessionsController < Devise::SessionsController
   def create
     super do |user|
       @auth_token = Tiddle.create_and_return_token(user, request)
+      return render "devise/registrations/create"
     end
   end
 
@@ -16,7 +17,7 @@ class Users::SessionsController < Devise::SessionsController
     if current_user && Tiddle.expire_token(current_user, request)
       head :ok
     else
-      render json: { error: "invalid token" }, status: 401
+      render json: { error: {"auth_token": ["invalid token"]} }, status: 401
     end
   end
 
