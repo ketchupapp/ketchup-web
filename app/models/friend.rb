@@ -1,6 +1,6 @@
 class Friend < ApplicationRecord
   belongs_to :user
-  has_many :catchups
+  has_many :catchups, dependent: :destroy
   has_one :last_catchup, -> { order(happened_at: :desc) }, class_name: 'Catchup'
 
   validates_presence_of :name
