@@ -1,0 +1,3 @@
+development:
+  dev_trace: true
+  monitor: false

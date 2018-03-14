@@ -153,6 +153,7 @@ GEM
     rspec-support (3.7.1)
     ruby_dep (1.5.0)
     ruby_http_client (3.3.0)
+    scout_apm (2.4.9)
     sendgrid-ruby (5.2.0)
       ruby_http_client (~> 3.2)
       sinatra (>= 1.4.7, < 3)
@@ -211,6 +212,7 @@ DEPENDENCIES
   rails (= 5.1.5)
   redis (~> 4.0)
   rspec-rails (~> 3.7)
+  scout_apm (~> 2.4)
   sendgrid-ruby (~> 5.2)
   tiddle!
   web-console (~> 3.3)

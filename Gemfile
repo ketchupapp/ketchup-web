@@ -6,12 +6,13 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "rails", "5.1.5"
 
-gem "pg", ">= 0.18", "< 2.0"
-gem "puma", "~> 3.7"
-gem "webpacker", "~> 3.2"
 gem "devise", "~> 4.4"
 gem "jbuilder", "~> 2.7"
+gem "pg", ">= 0.18", "< 2.0"
+gem "puma", "~> 3.7"
+gem "scout_apm", "~> 2.4"
 gem "tiddle", github: "adamniedzielski/tiddle"
+gem "webpacker", "~> 3.2"
 
 group :production do
   gem "lograge", "~> 0.9.0"
@@ -28,4 +29,3 @@ group :development do
   gem "web-console", "~> 3.3"
   gem "listen", ">= 3.0.5", "< 3.2"
 end
-
