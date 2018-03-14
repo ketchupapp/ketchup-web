@@ -1,5 +1,5 @@
-import "assets/fonts/nunitosans-regular.ttf";
-import "assets/fonts/fredokaone.ttf";
+import "fonts/nunitosans-regular.ttf";
+import "fonts/fredokaone.ttf";
 
 import "assets/stylesheets/application";
 
