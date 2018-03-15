@@ -5,6 +5,8 @@ class Users::SessionsController < Devise::SessionsController
   respond_to :json, :only => [:create, :destroy]
 
   def create
+    return super unless request.format.json?
+
     super do |user|
       @auth_token = Tiddle.create_and_return_token(user, request)
     end
