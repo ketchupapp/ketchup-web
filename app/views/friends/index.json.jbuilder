@@ -1,1 +1,1 @@
-json.friends @friends, partial: 'friends/friend', as: :friend
+json.value @friends, partial: 'friends/friend', as: :friend
