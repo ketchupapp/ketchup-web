@@ -7,7 +7,6 @@ class Users::SessionsController < Devise::SessionsController
   def create
     super do |user|
       @auth_token = Tiddle.create_and_return_token(user, request)
-      return render "devise/registrations/create"
     end
   end
 
