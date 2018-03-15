@@ -10,9 +10,10 @@
 
   <body>
     <header>
-      <h1>Ketchup!</h1>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <section id="logo">
+        <%= image_tag asset_pack_path("_/assets/images/logo_sketch.png") %>
+        <h1>Ketchup!</h1>
+      </section>
 
       <nav class="menu">
         <ul>
@@ -26,6 +27,9 @@
           <% end %>
         </ul>
       </nav>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </header>
 
     <section class="main">
