@@ -7,7 +7,6 @@ default: &default
   cache_path: tmp/cache/webpacker
 
   # Additional paths webpack should lookup modules
-  # ['app/assets', 'engine/foo/app/assets']
   resolved_paths: ['app/assets']
 
   # Reload manifest.json on all requests so we reload latest compiled packs
@@ -15,15 +14,6 @@ default: &default
 
   extensions:
     - .js
-    - .sass
-    - .scss
-    - .css
-    - .png
-    - .svg
-    - .gif
-    - .jpeg
-    - .jpg
-    - .ttf
 
 development:
   <<: *default
