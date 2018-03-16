@@ -2,7 +2,7 @@
   <tbody>
     <% @friends.each do |friend| %>
       <tr>
-        <td><%= image_tag friend.avatar_url, width: 60, height: 60 if friend.avatar_url %></td>
+        <td><%= cdn_image_tag(friend.avatar_url, width: 60, height: 60) if friend.avatar_url %></td>
         <td><%= link_to friend.nickname || friend.name, edit_friend_path(friend) %></td>
         <td><%= time_ago(friend.last_seen_at) %></td>
         <td><%= link_to "Mark caught up!", friend_catchups_path(friend, catchup: {}), method: :create %></td>
