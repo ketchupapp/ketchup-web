@@ -3,7 +3,7 @@ class Friend < ApplicationRecord
   has_many :catchups, dependent: :destroy
   has_one :last_catchup, -> { order(happened_at: :desc) }, class_name: 'Catchup'
 
-  scope :unseen_to_seen, -> {
+  scope :longest_ago_first, -> {
     includes(:last_catchup).
     order("catchups.happened_at DESC NULLS LAST").
     reverse

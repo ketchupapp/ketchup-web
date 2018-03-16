@@ -4,7 +4,7 @@ class FriendsController < ApplicationController
   # GET /friends
   # GET /friends.json
   def index
-    @friends = current_user.friends.unseen_to_seen
+    @friends = current_user.friends.longest_ago_first
   end
 
   # GET /friends/1
