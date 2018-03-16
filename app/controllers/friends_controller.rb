@@ -4,7 +4,7 @@ class FriendsController < ApplicationController
   # GET /friends
   # GET /friends.json
   def index
-    @friends = current_user.friends.includes(:last_catchup).order("catchups.happened_at ASC NULLS FIRST")
+    @friends = current_user.friends.unseen_to_seen
   end
 
   # GET /friends/1
