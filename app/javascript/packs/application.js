@@ -2,7 +2,7 @@
 import "ketchup.js";
 
 // Stylesheets
-import "stylesheets/application.css";
+import "stylesheets/ketchup.css";
 /* Environment-specific CSS, if it exists */
 import(/* webpackMode: "eager" */ `stylesheets/${process.env.RAILS_ENV}.css`);
 
