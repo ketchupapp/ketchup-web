@@ -16,6 +16,7 @@ gem "jbuilder", "~> 2.7"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.7"
 gem "scout_apm", "~> 2.4"
+gem "strong_migrations", "~> 0.2.2"
 gem "tiddle", github: "adamniedzielski/tiddle"
 gem "webpacker", "~> 3.2"
 
@@ -37,6 +38,5 @@ group :development do
   gem "guard-rspec", "~> 4.7", require: false
   gem "listen", ">= 3.0.5", "< 3.2", require: false
   gem "rack-livereload", "~> 0.3.16"
-  gem "strong_migrations", "~> 0.2.2"
   gem "web-console", "~> 3.3"
 end
