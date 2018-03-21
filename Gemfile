@@ -27,6 +27,9 @@ group :development, :test do
 end
 
 group :development do
+  gem "guard-livereload", "~> 2.5", require: false
+  gem "guard-rspec", "~> 4.7", require: false
+  gem "listen", ">= 3.0.5", "< 3.2", require: false
+  gem "rack-livereload", "~> 0.3.16"
   gem "web-console", "~> 3.3"
-  gem "listen", ">= 3.0.5", "< 3.2"
 end
