@@ -6,6 +6,7 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "rails", "5.1.5"
 
+gem "administrate", "~> 0.9.0"
 gem "cloudinary", "~> 1.9"
 gem "devise", "~> 4.4"
 gem "devise-pwned_password", "~> 0.1.4"

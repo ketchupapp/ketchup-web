@@ -11,6 +11,10 @@ class Friend < ApplicationRecord
 
   validates_presence_of :name
 
+  def display_name
+    nickname || name
+  end
+
   def last_seen_at
     last_catchup&.happened_at
   end
