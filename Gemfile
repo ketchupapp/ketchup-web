@@ -8,6 +8,7 @@ gem "rails", "5.1.5"
 
 gem "cloudinary", "~> 1.9"
 gem "devise", "~> 4.4"
+gem "devise-pwned_password", "~> 0.1.4"
 gem "jbuilder", "~> 2.7"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.7"
