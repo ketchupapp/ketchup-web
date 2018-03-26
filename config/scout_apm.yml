@@ -1,3 +1,6 @@
 development:
   dev_trace: true
   monitor: false
+test:
+  dev_trace: false
+  monitor: false
