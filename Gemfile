@@ -6,9 +6,10 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "rails", "5.2.0.rc2"
 
+gem "activestorage-cloudinary-service"
 gem "administrate", "~> 0.9.0"
 gem "bootsnap", "~> 1.2"
-gem "cloudinary", "~> 1.9"
+gem "cloudinary", "~> 1.9", require: false
 gem "devise", "~> 4.4"
 gem "devise-pwned_password", github: "michaelbanfield/devise-pwned_password"
 gem "jbuilder", "~> 2.7"
