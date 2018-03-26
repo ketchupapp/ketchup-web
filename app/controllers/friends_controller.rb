@@ -79,12 +79,12 @@ class FriendsController < ApplicationController
 
     def bulk_friend_params
       params.require(:friends).map do |object|
-        object.permit(:name, :nickname, :avatar_url)
+        object.permit(:name, :nickname, :avatar_url, :avatar)
       end
     end
 
     # Only allow a trusted parameter "white list" through.
     def friend_params
-      params.require(:friend).permit(:name, :nickname, :avatar_url)
+      params.require(:friend).permit(:name, :nickname, :avatar_url, :avatar)
     end
 end

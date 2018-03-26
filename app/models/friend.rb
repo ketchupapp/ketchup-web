@@ -2,6 +2,7 @@ class Friend < ApplicationRecord
   belongs_to :user
   has_many :catchups, dependent: :destroy
   has_one :last_catchup, -> { order(happened_at: :desc) }, class_name: 'Catchup'
+  has_one_attached :avatar
 
   scope :longest_ago_first, -> {
     includes(:last_catchup).

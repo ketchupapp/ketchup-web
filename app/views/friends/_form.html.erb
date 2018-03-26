@@ -26,6 +26,14 @@
     <%= form.text_field :avatar_url, id: :friend_avatar_url %>
   </div>
 
+  <div class="field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar, id: :friend_avatar %>
+    <% if friend.avatar.attached? %>
+      <%= image_tag url_for(friend.avatar), width: 100, height: 100 %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
