@@ -54,7 +54,10 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.host = ENV.fetch("HOST", "localhost")
+  config.port = ENV.fetch("PORT", "3000")
+  config.action_mailer.default_url_options = { host: config.host, port: config.port }
 
-  config.middleware.insert_before ActionDispatch::DebugExceptions, Rack::LiveReload, no_swf: true
+  config.middleware.insert_before ActionDispatch::DebugExceptions, Rack::LiveReload,
+    { no_swf: true, host: "localhost" }
 end
