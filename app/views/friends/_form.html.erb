@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :avatar %>
-    <%= form.file_field :avatar, id: :friend_avatar %>
+    <%= form.file_field :avatar, id: :friend_avatar, direct_upload: true %>
     <% if friend.avatar.attached? %>
       <%= image_tag url_for(friend.avatar), width: 100, height: 100 %>
     <% end %>
