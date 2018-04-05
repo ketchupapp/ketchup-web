@@ -2,7 +2,7 @@
   font-family: 'Fredericka the Great';
   font-style: normal;
   font-weight: 400;
-  src: local('Fredericka the Great'), local('FrederickatheGreat'), url(https://fonts.gstatic.com/s/frederickathegreat/v6/9Bt33CxNwt7aOctW2xjbCstzwVKsIBVV--SjxbI.ttf) format('truetype');
+  src: local('Fredericka the Great'), local('FrederickatheGreat'), url('~fonts/frederickathegreat.ttf') format('truetype');
 }
 
 #logo h1 {
