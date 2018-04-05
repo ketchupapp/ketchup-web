@@ -90,6 +90,8 @@ GEM
     execjs (2.7.0)
     ffi (1.9.23)
     formatador (0.2.5)
+    gindex (0.1.2)
+      railties
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     guard (2.14.2)
@@ -350,6 +352,7 @@ DEPENDENCIES
   cloudinary (~> 1.9)
   devise (~> 4.4)
   devise-pwned_password!
+  gindex (~> 0.1.2)
   guard-livereload (~> 2.5)
   guard-rspec (~> 4.7)
   jbuilder (~> 2.7)

@@ -32,9 +32,11 @@ group :development, :test do
 end
 
 group :development do
+  gem "gindex", "~> 0.1.2"
   gem "guard-livereload", "~> 2.5", require: false
   gem "guard-rspec", "~> 4.7", require: false
   gem "listen", ">= 3.0.5", "< 3.2", require: false
   gem "rack-livereload", "~> 0.3.16"
+  gem "strong_migrations", "~> 0.2.2"
   gem "web-console", "~> 3.3"
 end
