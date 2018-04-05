@@ -8,7 +8,7 @@ import "stylesheets/ketchup.css";
 import(/* webpackMode: "eager" */ `stylesheets/${process.env.RAILS_ENV}.css`);
 
 // Fonts
-import "fonts/nunitosans-regular.ttf";
+import "fonts/prompt-light.ttf";
 import "fonts/fredokaone.ttf";
 
 // Images

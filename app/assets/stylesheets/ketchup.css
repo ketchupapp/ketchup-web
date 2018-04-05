@@ -6,10 +6,10 @@
 }
 
 @font-face {
-  font-family: 'Nunito Sans';
+  font-family: 'Prompt';
   font-style: normal;
   font-weight: 400;
-  src: local('Nunito Sans Regular'), local('NunitoSans-Regular'), url('~fonts/nunitosans-regular.ttf') format('truetype');
+  src: local('Prompt-Light'), url('~fonts/prompt-light.ttf') format('truetype');
 }
 
 body, p, ol, ul, td {
