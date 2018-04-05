@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ketchup</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header>
-      <section id="logo">
-        <%= image_tag asset_pack_path("_/assets/images/logo_sketch.png") %>
-        <h1>Ketchup!</h1>
-      </section>
-
-      <nav class="menu">
-        <ul>
-          <li><%= link_to "Friends", friends_path %></li>
-          <li><%= link_to "About", about_path %></li>
-          <% if user_signed_in? %>
-            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Log in", user_session_path %></li>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-          <% end %>
-        </ul>
+  <body class="sans-serif marginvertical-medium maxwidth-xxxxxlarge-ns center">
+    <section class="display-flex justifycontent-spacebetween">
+      <a id="identity" href="/" class="display-flex">
+        <%= image_tag asset_pack_path("_/assets/images/logo_sketch.png"), class: "height-xlarge marginright-small" %>
+        <h1 id="title" class="f1 serif margin-none padding-xsmall">Ketchup!</h1>
+      </a>
+      <nav class="display-flex alignitems-center">
+        <%= nav_link "Friends", friends_path %>
+        <%= nav_link "About", about_path %>
+        <% if user_signed_in? %>
+          <%= nav_link "Log out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= nav_link "Log in", user_session_path %>
+          <%= nav_link "Sign up", new_user_registration_path %>
+        <% end %>
       </nav>
-    </header>
+    </section>
 
     <section class="flashes">
       <p class="notice"><%= notice %></p>

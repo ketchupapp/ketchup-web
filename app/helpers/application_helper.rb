@@ -6,4 +6,10 @@ module ApplicationHelper
       image_tag url, **kwargs
     end
   end
+
+  def nav_link(*args, **kwargs, &block)
+    kwargs[:class] ||= ""
+    kwargs[:class] += "f6 f5-ns display-inlineblock marginleft-small marginright-none"
+    link_to *args, **kwargs, &block
+  end
 end

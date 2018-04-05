@@ -1,3 +1,5 @@
+<h2 class="serif">Catch up with a friend</h2>
+
 <table>
   <tbody>
     <% @friends.each do |friend| %>
@@ -13,4 +15,4 @@
 
 <br>
 
-<%= link_to 'Add friend', new_friend_path %>
+<%= link_to 'Add another friend', new_friend_path, class: "f6 display-inlineblock white backgroundcolor-darkgrey border borderwidth-4 bordercolor-darkgrey borderradius-2" %>
