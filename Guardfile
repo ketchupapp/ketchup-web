@@ -1,7 +1,6 @@
 guard :livereload do
   extensions = {
     html: :html,
-    json: :json,
   }
 
   rails_view_exts = %w(erb)
