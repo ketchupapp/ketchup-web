@@ -1,3 +1,6 @@
+production:
+  dev_trace: false
+  monitor: true
 development:
   dev_trace: true
   monitor: false
