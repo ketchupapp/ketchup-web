@@ -323,7 +323,7 @@ GIT
 
 GIT
   remote: https://github.com/indirect/activestorage-cloudinary-service
-  revision: 4c6df79c1dc9c8315e169ac15e5bd312045830ae
+  revision: af075d31a61086c8b54ec3c540e49e44dcf794d6
   branch: master
   specs:
     activestorage-cloudinary-service (0.1.0)
