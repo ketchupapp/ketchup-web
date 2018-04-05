@@ -6,7 +6,7 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "rails", "5.2.0.rc2"
 
-gem "activestorage-cloudinary-service"
+gem "activestorage-cloudinary-service", github: "indirect/activestorage-cloudinary-service", branch: "master"
 gem "administrate", "~> 0.9.0"
 gem "bootsnap", "~> 1.2"
 gem "cloudinary", "~> 1.9", require: false
