@@ -8,8 +8,22 @@
 @font-face {
   font-family: 'Prompt';
   font-style: normal;
+  font-weight: 200;
+  src: local('Prompt-Thin'), url('~fonts/prompt-thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Prompt';
+  font-style: normal;
   font-weight: 400;
   src: local('Prompt-Light'), url('~fonts/prompt-light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Prompt-Bold'), url('~fonts/prompt-bold.ttf') format('truetype');
 }
 
 body {
