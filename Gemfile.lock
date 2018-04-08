@@ -279,6 +279,8 @@ GEM
     sendgrid-ruby (5.2.0)
       ruby_http_client (~> 3.2)
       sinatra (>= 1.4.7, < 3)
+    server_timing (1.0.2)
+      scout_apm
     shellany (0.0.1)
     sinatra (2.0.1)
       mustermann (~> 1.0)
@@ -368,6 +370,7 @@ DEPENDENCIES
   rspec-rails (~> 3.7)
   scout_apm (~> 2.4)
   sendgrid-ruby (~> 5.2)
+  server_timing (~> 1.0)
   strong_migrations (~> 0.2.2)
   tiddle!
   web-console (~> 3.3)
